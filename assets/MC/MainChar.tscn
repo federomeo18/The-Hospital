@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/MC/MainChar.gd" type="Script" id=1]
+[ext_resource path="res://assets/MC/MainChar.tres" type="Material" id=2]
+[ext_resource path="res://assets/MC/MC_Standing.png" type="Texture" id=3]
+[ext_resource path="res://assets/MC/MC_Standing_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/MC/MC_Walking_2.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.91927, 20.1791 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "walking",
+"speed": 5.0
+} ]
+
+[node name="MainChar" type="Area2D"]
+script = ExtResource( 1 )
+speed = 40
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.5, 0 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, -65 )
+current = true
+zoom = Vector2( 0.3, 0.3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+material = ExtResource( 2 )
+position = Vector2( -50, 48 )
+frames = SubResource( 2 )
+animation = "walking"
+offset = Vector2( 49.884, -60 )
+
+[node name="RayCastFront" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 20, 0 )
+[connection signal="area_entered" from="." to="." method="_on_MainChar_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_MainChar_area_exited"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
