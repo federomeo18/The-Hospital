@@ -1,5 +1,10 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="Interface" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[ext_resource path="res://assets/UI/UI.gd" type="Script" id=1]
+[ext_resource path="res://assets/UI/SoundBar.tscn" type="PackedScene" id=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="SoundBar" parent="." instance=ExtResource( 2 )]
+rect_scale = Vector2( 0.7, 0.7 )

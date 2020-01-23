@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bar.png-cf352267ab2ec1e749f1ce2777816098.stex"
+path="res://.import/Bar_fill.png-e6fee890c0c3b87d1be6368c0f2fd4c1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/Bar.png"
-dest_files=[ "res://.import/Bar.png-cf352267ab2ec1e749f1ce2777816098.stex" ]
+source_file="res://assets/UI/Bar_fill.png"
+dest_files=[ "res://.import/Bar_fill.png-e6fee890c0c3b87d1be6368c0f2fd4c1.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

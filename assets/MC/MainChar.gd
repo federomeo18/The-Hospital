@@ -10,9 +10,9 @@ var velocity = Vector2()
 var nomaterial = null
 var step_animation = false
 var attackblink = preload("res://assets/MC/MainChar.tres")
-onready var noiseNode = load("res://assets/MC/Noise.tscn")
 
 signal playerattack
+signal noiselevelchanged(noiselevel)
 
 onready var ray:=$RayCastFront
 
@@ -20,17 +20,13 @@ func start(pos):
 	position = pos
 
 func _ready():
-	#var noise_Instance = noiseNode.instance()
-	#add_child(noise_Instance)
-	pass
-	#$AnimatedSprite.material = nomaterial
+	$AnimatedSprite.material = nomaterial
 
 func _process(delta):
 	get_input()
 	_check_shaders()
 	_check_animation()
 	position += velocity * delta
-	#$Noise.steps(noiselevel)
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_accept") && ray.is_colliding():
@@ -38,15 +34,22 @@ func _unhandled_input(event):
 
 func get_input():
 	velocity = Vector2()
-	if Input.is_action_pressed("ui_lshift"):
+	if Input.is_action_pressed("ui_lshift") && (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")) && is_hidden == false:
 		speed = 80
-		noiselevel = 60
-	elif Input.is_action_pressed("ui_lctrl"):
+		noiselevel = 80
+		emit_signal("noiselevelchanged",noiselevel)
+	elif Input.is_action_pressed("ui_lctrl") && (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")) && is_hidden == false:
 		speed = 20
-		noiselevel = 10
+		noiselevel = 20
+		emit_signal("noiselevelchanged",noiselevel)
+	elif (!Input.is_action_pressed("ui_lshift") || !Input.is_action_pressed("ui_lctrl")) && (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")) && is_hidden == false:
+		speed = 40
+		noiselevel = 50
+		emit_signal("noiselevelchanged",noiselevel)
 	else:
 		speed = 40
-		noiselevel = 20
+		noiselevel = 0
+		emit_signal("noiselevelchanged",noiselevel)
 	if Input.is_action_pressed("ui_left") && is_hidden == false:
 		velocity.x -= 1
 		$AnimatedSprite.flip_h = true
@@ -55,7 +58,6 @@ func get_input():
 	elif Input.is_action_pressed("ui_right") && is_hidden == false:
 		velocity.x += 1
 		$AnimatedSprite.flip_h = false
-		#_stepping()
 		step_animation = true
 		$RayCastFront.cast_to = Vector2(20,0)
 	elif !Input.is_action_pressed("ui_left") or !Input.is_action_pressed("ui_right"):
@@ -85,22 +87,11 @@ func _check_shaders():
 		$AnimatedSprite.material = nomaterial
 
 func _on_Enemy1_enemyattack():
-	pass
+	ray.enabled = false
+	#pass
 	#visible = false
 	#queue_free()
 
 func _check_animation():
 	if step_animation == true:
 		$AnimatedSprite.play("walking")
-
-func _on_AnimatedSprite_animation_finished():
-	step_animation = false
-	$AnimatedSprite.play("idle")
-	#_stepping()
-
-func _stepping():
-	pass
-	#var step = load("res://assets/MC/Noise.tscn")
-	#var s = step.instance()
-	#add_child_below_node(self, s)
-	#pass

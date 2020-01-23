@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/MC/MainChar.gd" type="Script" id=1]
 [ext_resource path="res://assets/MC/MainChar.tres" type="Material" id=2]
@@ -21,6 +21,8 @@ animations = [ {
 "name": "walking",
 "speed": 5.0
 } ]
+
+[sub_resource type="GDScript" id=3]
 
 [node name="MainChar" type="Area2D"]
 script = ExtResource( 1 )
@@ -45,6 +47,8 @@ offset = Vector2( 49.884, -60 )
 [node name="RayCastFront" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 20, 0 )
+
+[node name="NoiseLevel" type="Node" parent="."]
+script = SubResource( 3 )
 [connection signal="area_entered" from="." to="." method="_on_MainChar_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_MainChar_area_exited"]
-[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
