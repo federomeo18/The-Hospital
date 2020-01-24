@@ -15,6 +15,9 @@ scale = Vector2( 0.1, 0.1 )
 [node name="Door" parent="." instance=ExtResource( 2 )]
 position = Vector2( -13.396, 555.675 )
 
+[node name="Door2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 40.5447, 555.473 )
+
 [node name="MainChar" parent="." instance=ExtResource( 3 )]
 position = Vector2( -67.9954, 577.271 )
 
@@ -29,6 +32,7 @@ color = Color( 0.101961, 0.101961, 0.101961, 1 )
 [connection signal="noiselevelchanged" from="MainChar" to="Enemy1" method="_on_MainChar_noiselevelchanged"]
 [connection signal="noiselevelchanged" from="MainChar" to="CanvasLayer" method="_on_MainChar_noiselevelchanged"]
 [connection signal="playerattack" from="MainChar" to="Enemy1" method="_on_MainChar_playerattack"]
+[connection signal="playerhidden" from="MainChar" to="Enemy1" method="_on_MainChar_playerhidden"]
 [connection signal="enemyattack" from="Enemy1" to="MainChar" method="_on_Enemy1_enemyattack"]
 
 [editable path="MainChar"]

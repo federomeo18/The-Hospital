@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MC_Standing_2.png-266a81f1209071bced42e1de0256d987.stex"
+path="res://.import/MC Hiding-3.png-0788a52608aedfdeb6b06d7a331a7d1e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MC/MC_Standing_2.png"
-dest_files=[ "res://.import/MC_Standing_2.png-266a81f1209071bced42e1de0256d987.stex" ]
+source_file="res://assets/MC/Animations/MC Hiding-3.png"
+dest_files=[ "res://.import/MC Hiding-3.png-0788a52608aedfdeb6b06d7a331a7d1e.stex" ]
 
 [params]
 

@@ -5,12 +5,11 @@ export (int) var speed
 signal enemyattack
 
 var velocity = Vector2.ZERO
-var starter_pos = Vector2.ZERO
 var player_noise = 0
-var search_mode = true
-#var is_entered = null
-#var can_move = true
-#var can_attack = true
+var player_hidden = false
+var status = 0
+var toogle = -1
+onready var first_stop = $"1stPos".position.x
 
 onready var rayf:=$RayCastFront
 onready var rayb:=$RayCastBack
@@ -21,33 +20,32 @@ func start(pos):
 	position = pos
 
 func _ready():
-	starter_pos.x = get_position_in_parent()
-	#pass
-	#$AnimatedSprite.flip_h = true
-#func get_input():
-#	if Input.is_action_pressed("ui_left"):
-#		$AnimatedSprite.flip_h = true
-#	if Input.is_action_pressed("ui_right"):
-#		$AnimatedSprite.flip_h = false
-	
+	pass
+
 func _process(delta):
-	if search_mode == true:
+	if status == 0:
+		speed = 30
 		patrol()
-	#get_input()
+		if rayf.is_colliding() && player_hidden == false:
+			status = 1
+		if rayb.is_colliding() && player_noise >= 80 && player_hidden == false:
+			status = 1
+	elif status == 1:
+		speed = 90
+		attack()
+	elif status == 2:
+		velocity.x = 0
 	_vision(delta)
-	if rayf.is_colliding():
-		search_mode = false
-		attack()
-	elif rayb.is_colliding() && player_noise >= 50:
-		search_mode = false
-		attack()
 
 func _physics_process(delta):
 	position += velocity * delta
-	
 
 func _vision(test):
 	test = null
+	if velocity.x <= 0:
+		$AnimatedSprite.flip_h = true
+	else:
+		$AnimatedSprite.flip_h = false
 	if $AnimatedSprite.flip_h == true:
 		$RayCastFront.cast_to = Vector2(-60,0)
 		$RayCastBack.cast_to = Vector2(60,0)
@@ -66,21 +64,18 @@ func attack():
 		velocity = velocity.normalized() * speed
 
 func patrol():
-	if position <= starter_pos:
-		speed = 30
-		if velocity.length() > 0:
-			velocity = velocity.normalized() * speed
-	#elif 
+	velocity.x += (first_stop - position.x)
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
 
 func _on_Area2D_area_entered(area):
 	if area.name == "MainChar":
-		speed = 0
+		status = 2
 		emit_signal("enemyattack")
-	#velocity.x = 0
 
 func _on_Area2D_area_exited(area):
-	speed = 90
-	#pass
+	#speed = 90
+	pass
 	#is_entered = area
 	#is_entered = null
 	#velocity.x = 0
@@ -90,3 +85,7 @@ func _on_MainChar_playerattack():
 
 func _on_MainChar_noiselevelchanged(noiselevel):
 	player_noise = noiselevel
+
+
+func _on_MainChar_playerhidden(is_hidden):
+	player_hidden = is_hidden
