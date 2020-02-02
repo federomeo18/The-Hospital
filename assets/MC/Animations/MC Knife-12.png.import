@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MC_Standing_2.png-57d28a5a9ab8dbeb355bd3336846c7ad.stex"
+path="res://.import/MC Knife-12.png-f1d7fffe65637b5a3afaa822b9ffa851.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MC/Animations/MC_Standing_2.png"
-dest_files=[ "res://.import/MC_Standing_2.png-57d28a5a9ab8dbeb355bd3336846c7ad.stex" ]
+source_file="res://assets/MC/Animations/MC Knife-12.png"
+dest_files=[ "res://.import/MC Knife-12.png-f1d7fffe65637b5a3afaa822b9ffa851.stex" ]
 
 [params]
 

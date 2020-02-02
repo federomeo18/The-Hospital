@@ -26,13 +26,16 @@ func _ready():
 func _process(delta):
 	get_input()
 	_check_shaders()
-	_check_animation()
 	position += velocity * delta
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_accept") && ray.is_colliding():
 		$AnimatedSprite.play("knife")
 		emit_signal("playerattack")
+		can_move = false
+		yield($AnimatedSprite, "animation_finished" )
+		$AnimatedSprite.play("idle")
+		can_move = true
 
 func get_input():
 	velocity = Vector2()
@@ -55,29 +58,39 @@ func get_input():
 	if Input.is_action_pressed("ui_left") && is_hidden == false && can_move == true:
 		velocity.x -= 1
 		$AnimatedSprite.flip_h = true
-		#step_animation = true
 		$RayCastFront.cast_to = Vector2(-20,0)
+		if Input.is_action_pressed("ui_lctrl"):
+			$AnimatedSprite.play("crouching")
+		else:
+			$AnimatedSprite.play("walking")
 	elif Input.is_action_pressed("ui_right") && is_hidden == false && can_move == true:
 		velocity.x += 1
 		$AnimatedSprite.flip_h = false
-		#step_animation = true
 		$RayCastFront.cast_to = Vector2(20,0)
+		if Input.is_action_pressed("ui_lctrl"):
+			$AnimatedSprite.play("crouching")
+		else:
+			$AnimatedSprite.play("walking")
 	elif !Input.is_action_pressed("ui_left") or !Input.is_action_pressed("ui_right"):
 		speed = 0
 		noiselevel = 0
+		if is_hidden == false && !Input.is_action_pressed("ui_lctrl"):
+			$AnimatedSprite.play("idle")
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	if Input.is_action_pressed("ui_up") && can_hide == true:
-		#visible = false
 		is_hidden = true
 		emit_signal("playerhidden",is_hidden)
 		$AnimatedSprite.play("hiding")
 	if Input.is_action_pressed("ui_down") && is_hidden == true:
-		#visible = true
+		$AnimatedSprite.play("unhide")
+		yield($AnimatedSprite, "animation_finished" )
 		is_hidden = false
 		emit_signal("playerhidden",is_hidden)
-		$AnimatedSprite.play("unhide")
-
+		#$AnimatedSprite.play("unhide")
+		#yield($AnimatedSprite, "animation_finished" )
+		$AnimatedSprite.play("idle")
+		
 func _on_MainChar_area_entered(area):
 	if area.is_in_group("doors"):
 		can_hide = true
@@ -93,10 +106,6 @@ func _check_shaders():
 		$AnimatedSprite.material = nomaterial
 
 func _on_Enemy1_enemyattack():
+	visible = false
 	can_move = false
 	ray.enabled = false
-
-func _check_animation():
-	pass
-	#if step_animation == true:
-	#	$AnimatedSprite.play("walking")

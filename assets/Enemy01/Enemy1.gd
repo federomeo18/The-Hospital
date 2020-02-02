@@ -35,6 +35,7 @@ func _process(delta):
 		attack()
 	elif status == 2:
 		velocity.x = 0
+		$AnimatedSprite.play("attack")
 	_vision(delta)
 
 func _physics_process(delta):
@@ -81,7 +82,8 @@ func _on_Area2D_area_exited(area):
 	#velocity.x = 0
 
 func _on_MainChar_playerattack():
-	queue_free()
+	if rayb.is_colliding():
+		queue_free()
 
 func _on_MainChar_noiselevelchanged(noiselevel):
 	player_noise = noiselevel
