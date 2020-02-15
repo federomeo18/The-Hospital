@@ -19,10 +19,6 @@ config/name="New Game Project"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-Can="*res://assets/Weapons/Can/Can.tscn"
-
 [input]
 
 ui_lshift={

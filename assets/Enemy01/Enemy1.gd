@@ -24,7 +24,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	print(status)
+	#print(status)
 	if status == 0:
 		speed = 30
 		patrol()
@@ -124,10 +124,16 @@ func _find_item():
 		velocity = velocity.normalized() * speed
 
 func _on_Can_dissapear(xl):
-	status = 3
+	var status = 3
 	#print("now")
 	#canl = get_parent().get_node("Can").position
 	#status = 3
 	throwx = xl
-	print(status)
+	#return status
+	#print(status)
 	#print(throwx)
+
+
+func _on_Connector_send_dissapear(xl):
+	var status = 3
+	throwx = xl

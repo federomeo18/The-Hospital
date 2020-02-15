@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/Background/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Background/Door.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/UI/UI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/Weapons/Can/Can_item.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Weapons/Brick/Brick_item.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/Other/Connector.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Node"]
 
@@ -43,8 +44,10 @@ position = Vector2( -33.1342, 590.91 )
 
 [node name="Brick_item" parent="." instance=ExtResource( 8 )]
 position = Vector2( -47.8321, 594.664 )
-[connection signal="noiselevelchanged" from="MainChar" to="CanvasLayer" method="_on_MainChar_noiselevelchanged"]
+
+[node name="Connector" parent="." instance=ExtResource( 9 )]
 [connection signal="noiselevelchanged" from="MainChar" to="Enemy1" method="_on_MainChar_noiselevelchanged"]
+[connection signal="noiselevelchanged" from="MainChar" to="CanvasLayer" method="_on_MainChar_noiselevelchanged"]
 [connection signal="playerattack" from="MainChar" to="Enemy1" method="_on_MainChar_playerattack"]
 [connection signal="playerhidden" from="MainChar" to="Enemy1" method="_on_MainChar_playerhidden"]
 [connection signal="enemyattack" from="Enemy1" to="MainChar" method="_on_Enemy1_enemyattack"]
