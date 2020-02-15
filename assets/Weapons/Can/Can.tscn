@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Weapons/Can/Can.gd" type="Script" id=1]
+[ext_resource path="res://assets/Weapons/Items.tres" type="Material" id=2]
+[ext_resource path="res://assets/Weapons/Can/Coke.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 13.7612, 8.57296 )
+
+[node name="Can" type="RigidBody2D" groups=[
+"can",
+]]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0745079, -0.123091 )
+scale = Vector2( 0.3, 0.3 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="CollisionShape2D"]
+material = ExtResource( 2 )
+position = Vector2( 0.24836, 0.410304 )
+rotation = 1.5708
+texture = ExtResource( 3 )
