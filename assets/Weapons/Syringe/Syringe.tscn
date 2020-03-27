@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Weapons/Syringe/Syringe.gd" type="Script" id=1]
+[ext_resource path="res://assets/Weapons/Items.tres" type="Material" id=2]
+[ext_resource path="res://assets/Weapons/Syringe/Syringe.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17.3542, 5.33948 )
+
+[node name="Syringe" type="Area2D" groups=[
+"syringe",
+]]
+scale = Vector2( 0.3, 0.3 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0562382, 1.92702 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = ExtResource( 2 )
+position = Vector2( 0.773214, 4.25266 )
+texture = ExtResource( 3 )

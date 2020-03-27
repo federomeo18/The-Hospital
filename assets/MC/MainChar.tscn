@@ -1,102 +1,165 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=117 format=2]
 
 [ext_resource path="res://assets/MC/MainChar.gd" type="Script" id=1]
 [ext_resource path="res://assets/Weapons/Can/Can.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/MC/MainChar.tres" type="Material" id=3]
-[ext_resource path="res://assets/MC/Animations/MC_Standing.png" type="Texture" id=4]
-[ext_resource path="res://assets/MC/Animations/MC_Walking_0.png" type="Texture" id=5]
-[ext_resource path="res://assets/MC/Animations/MC_Walking_1.png" type="Texture" id=6]
-[ext_resource path="res://assets/MC/Animations/MC_Walking_2.png" type="Texture" id=7]
-[ext_resource path="res://assets/MC/Animations/MC_Walking_3.png" type="Texture" id=8]
-[ext_resource path="res://assets/MC/Animations/MC_Walking_4.png" type="Texture" id=9]
-[ext_resource path="res://assets/MC/Animations/MC_Walking_5.png" type="Texture" id=10]
-[ext_resource path="res://assets/MC/Animations/MC Knife-00.png" type="Texture" id=11]
-[ext_resource path="res://assets/MC/Animations/MC Knife-01.png" type="Texture" id=12]
-[ext_resource path="res://assets/MC/Animations/MC Knife-02.png" type="Texture" id=13]
-[ext_resource path="res://assets/MC/Animations/MC Knife-03.png" type="Texture" id=14]
-[ext_resource path="res://assets/MC/Animations/MC Knife-04.png" type="Texture" id=15]
-[ext_resource path="res://assets/MC/Animations/MC Knife-05.png" type="Texture" id=16]
-[ext_resource path="res://assets/MC/Animations/MC Knife-06.png" type="Texture" id=17]
-[ext_resource path="res://assets/MC/Animations/MC Knife-07.png" type="Texture" id=18]
-[ext_resource path="res://assets/MC/Animations/MC Knife-08.png" type="Texture" id=19]
-[ext_resource path="res://assets/MC/Animations/MC Knife-09.png" type="Texture" id=20]
-[ext_resource path="res://assets/MC/Animations/MC Knife-10.png" type="Texture" id=21]
-[ext_resource path="res://assets/MC/Animations/MC Knife-11.png" type="Texture" id=22]
-[ext_resource path="res://assets/MC/Animations/MC Knife-12.png" type="Texture" id=23]
-[ext_resource path="res://assets/MC/Animations/MC Knife-13.png" type="Texture" id=24]
-[ext_resource path="res://assets/MC/Animations/MC Knife-14.png" type="Texture" id=25]
-[ext_resource path="res://assets/MC/Animations/MC Knife-15.png" type="Texture" id=26]
-[ext_resource path="res://assets/MC/Animations/MC Knife-16.png" type="Texture" id=27]
-[ext_resource path="res://assets/MC/Animations/MC Knife-17.png" type="Texture" id=28]
-[ext_resource path="res://assets/MC/Animations/MC Knife-18.png" type="Texture" id=29]
-[ext_resource path="res://assets/MC/Animations/MC Knife-19.png" type="Texture" id=30]
-[ext_resource path="res://assets/MC/Animations/MC Knife-20.png" type="Texture" id=31]
-[ext_resource path="res://assets/MC/Animations/MC Knife-21.png" type="Texture" id=32]
-[ext_resource path="res://assets/MC/Animations/MC Knife-22.png" type="Texture" id=33]
-[ext_resource path="res://assets/MC/Animations/MC Knife-23.png" type="Texture" id=34]
-[ext_resource path="res://assets/MC/Animations/MC Knife-24.png" type="Texture" id=35]
-[ext_resource path="res://assets/MC/Animations/MC Knife-25.png" type="Texture" id=36]
-[ext_resource path="res://assets/MC/Animations/MC Knife-26.png" type="Texture" id=37]
-[ext_resource path="res://assets/MC/Animations/MC Hiding-2.png" type="Texture" id=38]
-[ext_resource path="res://assets/MC/Animations/MC Hiding-3.png" type="Texture" id=39]
-[ext_resource path="res://assets/MC/Animations/MC Hiding-4.png" type="Texture" id=40]
-[ext_resource path="res://assets/MC/Animations/MC Hiding-5.png" type="Texture" id=41]
-[ext_resource path="res://assets/MC/Animations/MC Hiding-6.png" type="Texture" id=42]
-[ext_resource path="res://assets/MC/Animations/MC Hiding-7.png" type="Texture" id=43]
-[ext_resource path="res://assets/MC/Animations/MC Hiding-8.png" type="Texture" id=44]
-[ext_resource path="res://assets/MC/Animations/MC Hiding-9.png" type="Texture" id=45]
-[ext_resource path="res://assets/MC/Animations/MC_Crouching_0.png" type="Texture" id=46]
-[ext_resource path="res://assets/MC/Animations/MC_Crouching_1.png" type="Texture" id=47]
-[ext_resource path="res://assets/MC/Animations/MC_Crouching_2.png" type="Texture" id=48]
-[ext_resource path="res://assets/MC/Animations/MC_Crouching_3.png" type="Texture" id=49]
-[ext_resource path="res://assets/MC/Animations/MC Hiding-10.png" type="Texture" id=50]
-[ext_resource path="res://assets/MC/Animations/MC Hiding-11.png" type="Texture" id=51]
-[ext_resource path="res://assets/MC/Animations/MC Hiding-12.png" type="Texture" id=52]
-[ext_resource path="res://assets/MC/Animations/MC Hiding-13.png" type="Texture" id=53]
-[ext_resource path="res://assets/MC/Animations/MC Hiding-15.png" type="Texture" id=54]
-[ext_resource path="res://assets/MC/Animations/MC Hiding-14.png" type="Texture" id=55]
-[ext_resource path="res://assets/MC/Animations/MC Hiding-16.png" type="Texture" id=56]
-[ext_resource path="res://assets/MC/Animations/MC Throwing-00.png" type="Texture" id=57]
-[ext_resource path="res://assets/MC/Animations/MC Throwing-01.png" type="Texture" id=58]
-[ext_resource path="res://assets/MC/Animations/MC Throwing-02.png" type="Texture" id=59]
-[ext_resource path="res://assets/MC/Animations/MC Throwing-03.png" type="Texture" id=60]
+[ext_resource path="res://assets/Weapons/Brick/Brick.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/MC/MainChar.tres" type="Material" id=4]
+[ext_resource path="res://assets/MC/Animations/MC_Standing.png" type="Texture" id=5]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-00.png" type="Texture" id=6]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-01.png" type="Texture" id=7]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-02.png" type="Texture" id=8]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-03.png" type="Texture" id=9]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-04.png" type="Texture" id=10]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-05.png" type="Texture" id=11]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-06.png" type="Texture" id=12]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-07.png" type="Texture" id=13]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-08.png" type="Texture" id=14]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-09.png" type="Texture" id=15]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-10.png" type="Texture" id=16]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-11.png" type="Texture" id=17]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-12.png" type="Texture" id=18]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-13.png" type="Texture" id=19]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-14.png" type="Texture" id=20]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-15.png" type="Texture" id=21]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-16.png" type="Texture" id=22]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-17.png" type="Texture" id=23]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-18.png" type="Texture" id=24]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-19.png" type="Texture" id=25]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-20.png" type="Texture" id=26]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-21.png" type="Texture" id=27]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-22.png" type="Texture" id=28]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-23.png" type="Texture" id=29]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-24.png" type="Texture" id=30]
+[ext_resource path="res://assets/MC/Animations/MC Syringe-25.png" type="Texture" id=31]
+[ext_resource path="res://assets/MC/Animations/MC_Crouching_0.png" type="Texture" id=32]
+[ext_resource path="res://assets/MC/Animations/MC_Crouching_1.png" type="Texture" id=33]
+[ext_resource path="res://assets/MC/Animations/MC_Crouching_2.png" type="Texture" id=34]
+[ext_resource path="res://assets/MC/Animations/MC_Crouching_3.png" type="Texture" id=35]
+[ext_resource path="res://assets/MC/Animations/MC Knife-00.png" type="Texture" id=36]
+[ext_resource path="res://assets/MC/Animations/MC Knife-01.png" type="Texture" id=37]
+[ext_resource path="res://assets/MC/Animations/MC Knife-02.png" type="Texture" id=38]
+[ext_resource path="res://assets/MC/Animations/MC Knife-03.png" type="Texture" id=39]
+[ext_resource path="res://assets/MC/Animations/MC Knife-04.png" type="Texture" id=40]
+[ext_resource path="res://assets/MC/Animations/MC Knife-05.png" type="Texture" id=41]
+[ext_resource path="res://assets/MC/Animations/MC Knife-06.png" type="Texture" id=42]
+[ext_resource path="res://assets/MC/Animations/MC Knife-07.png" type="Texture" id=43]
+[ext_resource path="res://assets/MC/Animations/MC Knife-08.png" type="Texture" id=44]
+[ext_resource path="res://assets/MC/Animations/MC Knife-09.png" type="Texture" id=45]
+[ext_resource path="res://assets/MC/Animations/MC Knife-10.png" type="Texture" id=46]
+[ext_resource path="res://assets/MC/Animations/MC Knife-11.png" type="Texture" id=47]
+[ext_resource path="res://assets/MC/Animations/MC Knife-12.png" type="Texture" id=48]
+[ext_resource path="res://assets/MC/Animations/MC Knife-13.png" type="Texture" id=49]
+[ext_resource path="res://assets/MC/Animations/MC Knife-14.png" type="Texture" id=50]
+[ext_resource path="res://assets/MC/Animations/MC Knife-15.png" type="Texture" id=51]
+[ext_resource path="res://assets/MC/Animations/MC Knife-16.png" type="Texture" id=52]
+[ext_resource path="res://assets/MC/Animations/MC Knife-17.png" type="Texture" id=53]
+[ext_resource path="res://assets/MC/Animations/MC Knife-18.png" type="Texture" id=54]
+[ext_resource path="res://assets/MC/Animations/MC Knife-19.png" type="Texture" id=55]
+[ext_resource path="res://assets/MC/Animations/MC Knife-20.png" type="Texture" id=56]
+[ext_resource path="res://assets/MC/Animations/MC Knife-21.png" type="Texture" id=57]
+[ext_resource path="res://assets/MC/Animations/MC Knife-22.png" type="Texture" id=58]
+[ext_resource path="res://assets/MC/Animations/MC Knife-23.png" type="Texture" id=59]
+[ext_resource path="res://assets/MC/Animations/MC Knife-24.png" type="Texture" id=60]
+[ext_resource path="res://assets/MC/Animations/MC Knife-25.png" type="Texture" id=61]
+[ext_resource path="res://assets/MC/Animations/MC Knife-26.png" type="Texture" id=62]
+[ext_resource path="res://assets/MC/Animations/MC Hiding-2.png" type="Texture" id=63]
+[ext_resource path="res://assets/MC/Animations/MC Hiding-3.png" type="Texture" id=64]
+[ext_resource path="res://assets/MC/Animations/MC Hiding-4.png" type="Texture" id=65]
+[ext_resource path="res://assets/MC/Animations/MC Hiding-5.png" type="Texture" id=66]
+[ext_resource path="res://assets/MC/Animations/MC Hiding-6.png" type="Texture" id=67]
+[ext_resource path="res://assets/MC/Animations/MC Hiding-7.png" type="Texture" id=68]
+[ext_resource path="res://assets/MC/Animations/MC Hiding-8.png" type="Texture" id=69]
+[ext_resource path="res://assets/MC/Animations/MC Hiding-9.png" type="Texture" id=70]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-00.png" type="Texture" id=71]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-01.png" type="Texture" id=72]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-02.png" type="Texture" id=73]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-03.png" type="Texture" id=74]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-04.png" type="Texture" id=75]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-05.png" type="Texture" id=76]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-06.png" type="Texture" id=77]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-07.png" type="Texture" id=78]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-08.png" type="Texture" id=79]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-09.png" type="Texture" id=80]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-10.png" type="Texture" id=81]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-11.png" type="Texture" id=82]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-12.png" type="Texture" id=83]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-13.png" type="Texture" id=84]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-14.png" type="Texture" id=85]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-15.png" type="Texture" id=86]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-16.png" type="Texture" id=87]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-17.png" type="Texture" id=88]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-18.png" type="Texture" id=89]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-19.png" type="Texture" id=90]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-20.png" type="Texture" id=91]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-21.png" type="Texture" id=92]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-22.png" type="Texture" id=93]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-23.png" type="Texture" id=94]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-24.png" type="Texture" id=95]
+[ext_resource path="res://assets/MC/Animations/MC Pipe-25.png" type="Texture" id=96]
+[ext_resource path="res://assets/MC/Animations/MC_Walking_0.png" type="Texture" id=97]
+[ext_resource path="res://assets/MC/Animations/MC_Walking_1.png" type="Texture" id=98]
+[ext_resource path="res://assets/MC/Animations/MC_Walking_2.png" type="Texture" id=99]
+[ext_resource path="res://assets/MC/Animations/MC_Walking_3.png" type="Texture" id=100]
+[ext_resource path="res://assets/MC/Animations/MC_Walking_4.png" type="Texture" id=101]
+[ext_resource path="res://assets/MC/Animations/MC_Walking_5.png" type="Texture" id=102]
+[ext_resource path="res://assets/MC/Animations/MC Hiding-10.png" type="Texture" id=103]
+[ext_resource path="res://assets/MC/Animations/MC Hiding-11.png" type="Texture" id=104]
+[ext_resource path="res://assets/MC/Animations/MC Hiding-12.png" type="Texture" id=105]
+[ext_resource path="res://assets/MC/Animations/MC Hiding-13.png" type="Texture" id=106]
+[ext_resource path="res://assets/MC/Animations/MC Hiding-15.png" type="Texture" id=107]
+[ext_resource path="res://assets/MC/Animations/MC Hiding-14.png" type="Texture" id=108]
+[ext_resource path="res://assets/MC/Animations/MC Hiding-16.png" type="Texture" id=109]
+[ext_resource path="res://assets/MC/Animations/MC Throwing-00.png" type="Texture" id=110]
+[ext_resource path="res://assets/MC/Animations/MC Throwing-01.png" type="Texture" id=111]
+[ext_resource path="res://assets/MC/Animations/MC Throwing-02.png" type="Texture" id=112]
+[ext_resource path="res://assets/MC/Animations/MC Throwing-03.png" type="Texture" id=113]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.91927, 20.1791 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": false,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
 "loop": true,
-"name": "walking",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ) ],
-"loop": false,
-"name": "knife",
+"name": "syringe",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), null ],
-"loop": false,
-"name": "hiding",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ) ],
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ) ],
 "loop": true,
 "name": "crouching",
 "speed": 10.0
 }, {
-"frames": [ null, ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ) ],
+"loop": false,
+"name": "knife",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), null ],
+"loop": false,
+"name": "hiding",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ) ],
+"loop": true,
+"name": "pipe",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ) ],
+"loop": true,
+"name": "walking",
+"speed": 10.0
+}, {
+"frames": [ null, ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 5 ) ],
 "loop": false,
 "name": "unhide",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 113 ) ],
 "loop": false,
 "name": "throwing",
 "speed": 15.0
@@ -105,10 +168,11 @@ animations = [ {
 [sub_resource type="GDScript" id=3]
 
 [node name="MainChar" type="Area2D"]
-collision_mask = 9
+collision_mask = 8
 script = ExtResource( 1 )
 speed = 60
 can = ExtResource( 2 )
+brick = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.5, 0 )
@@ -117,10 +181,12 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -65 )
 current = true
-zoom = Vector2( 0.3, 0.3 )
+zoom = Vector2( 0.4, 0.3 )
+smoothing_enabled = true
+offset_v = 0.2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-material = ExtResource( 3 )
+material = ExtResource( 4 )
 position = Vector2( -50, 48 )
 frames = SubResource( 2 )
 animation = "idle"
@@ -132,5 +198,7 @@ cast_to = Vector2( 20, 0 )
 
 [node name="NoiseLevel" type="Node" parent="."]
 script = SubResource( 3 )
+
+[node name="Tween" type="Tween" parent="."]
 [connection signal="area_entered" from="." to="." method="_on_MainChar_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_MainChar_area_exited"]

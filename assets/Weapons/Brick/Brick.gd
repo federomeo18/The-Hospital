@@ -1,12 +1,8 @@
 extends RigidBody2D
 
-signal dissapear
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	apply_impulse(Vector2(),Vector2(80,-100).rotated(rotation))
+	apply_impulse(Vector2(),Vector2(100,-100).rotated(rotation))
 	
-func _process(delta):
-	position += Vector2(10,-10)
-	if position.y >= 630:
+func _process(_delta):
+	if position.y >= 590:
 		queue_free()

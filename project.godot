@@ -16,8 +16,16 @@ _global_script_class_icons={
 [application]
 
 config/name="New Game Project"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://assets/Scenes/Scene00.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Scene_handler="*res://Scene_handler.gd"
+
+[display]
+
+window/size/height=768
 
 [input]
 
@@ -31,6 +39,21 @@ ui_lctrl={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"unicode":0,"echo":false,"script":null)
  ]
 }
+Action={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Crouch={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Debug={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777349,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -38,6 +61,7 @@ ui_lctrl={
 2d_physics/layer_2="enemies"
 2d_physics/layer_3="objects"
 2d_physics/layer_4="background"
+2d_physics/layer_5="walls"
 
 [rendering]
 

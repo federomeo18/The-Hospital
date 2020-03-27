@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://assets/Enemy01/Enemy1.gd" type="Script" id=1]
 [ext_resource path="res://assets/Enemy01/Animations/Enemy01 Attack00.png" type="Texture" id=2]
@@ -45,6 +45,8 @@
 [ext_resource path="res://assets/Enemy01/Animations/Enemy01 Walking_17.png" type="Texture" id=43]
 [ext_resource path="res://assets/Enemy01/Animations/Enemy01 Walking_18.png" type="Texture" id=44]
 [ext_resource path="res://assets/Enemy01/Animations/Enemy01 Walking_19.png" type="Texture" id=45]
+[ext_resource path="res://assets/Enemy01/Animations/Enemy01 Eating_00.png" type="Texture" id=46]
+[ext_resource path="res://assets/Enemy01/Animations/Enemy01 Eating_01.png" type="Texture" id=47]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -57,6 +59,11 @@ animations = [ {
 "loop": true,
 "name": "walking",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "eat",
+"speed": 2.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -72,7 +79,7 @@ speed = 40
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "walking"
-frame = 15
+frame = 18
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
