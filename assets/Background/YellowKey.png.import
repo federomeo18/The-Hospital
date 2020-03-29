@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lateralDoor2.png-7c282c3dfc3732689b18df8a8a56eb0e.stex"
+path="res://.import/YellowKey.png-244905d2852c365aa1d81fd6f45804e6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Background/Sprites/lateralDoor2.png"
-dest_files=[ "res://.import/lateralDoor2.png-7c282c3dfc3732689b18df8a8a56eb0e.stex" ]
+source_file="res://assets/Background/YellowKey.png"
+dest_files=[ "res://.import/YellowKey.png-244905d2852c365aa1d81fd6f45804e6.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

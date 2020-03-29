@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lateralDoor2.png-f83b90133ec4edee21817bec47e495cb.stex"
+path="res://.import/Car1.png-bbc05fe6f7840fc6acfcbf3e78bf0bce.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Other/lateralDoor2.png"
-dest_files=[ "res://.import/lateralDoor2.png-f83b90133ec4edee21817bec47e495cb.stex" ]
+source_file="res://assets/Background/Sprites/Car1.png"
+dest_files=[ "res://.import/Car1.png-bbc05fe6f7840fc6acfcbf3e78bf0bce.stex" ]
 
 [params]
 

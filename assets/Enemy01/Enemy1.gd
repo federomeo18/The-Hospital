@@ -9,6 +9,7 @@ var velocity = Vector2.ZERO
 var player_noise = 0
 var player_hidden = false
 export var status = 0
+export var enemym = 0
 onready var first_stop = $"1stPos".position.x
 
 onready var rayf:=$RayCastFront
@@ -23,6 +24,8 @@ func _ready():
 	pass
 
 func _process(_delta):
+	if enemym == 1 && Scene_handler.enemies[1] == false:
+		queue_free()
 	if !Scene_handler.cut_scene_n == 2 && !Scene_handler.cut_scene_n == 3:
 		if status == 0:
 			speed = 30
@@ -35,7 +38,7 @@ func _process(_delta):
 				var cont = rayb.get_collider()
 				if cont.get_name() == "MainChar":
 					status = 1
-			if rayb.is_colliding():# && player_hidden == false:
+			if rayb.is_colliding():
 				var cont = rayb.get_collider()
 				if cont.get_name() == "Can"  || cont.get_name() == "Brick":
 					status = 3
@@ -74,11 +77,11 @@ func _process(_delta):
 				var cont = rayb.get_collider()
 				if cont.get_name() == "MainChar":
 					status = 1
-			if rayb.is_colliding():# && player_hidden == false:
+			if rayb.is_colliding():
 				var cont = rayb.get_collider()
 				if cont.get_name() == "Can"  || cont.get_name() == "Brick":
 					status = 3
-			if rayf.is_colliding():# && player_hidden == false:
+			if rayf.is_colliding():
 				var cont = rayf.get_collider()
 				if cont.get_name() == "Can"  || cont.get_name() == "Brick":
 					status = 3
@@ -158,8 +161,9 @@ func _on_Area2D_area_exited(_area):
 	#velocity.x = 0
 
 func _on_MainChar_playerattack():
-	if rayb.is_colliding():
-		queue_free()
+	if rayb.is_colliding() && enemym == 1:
+		Scene_handler.enemies[1] = false
+	queue_free()
 
 func _on_MainChar_noiselevelchanged(noiselevel):
 	player_noise = noiselevel

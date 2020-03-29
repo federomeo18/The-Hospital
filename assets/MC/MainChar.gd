@@ -10,6 +10,8 @@ var can_move = true
 #0 = no weapon, 1 = scalpel, 2 = pipe, 3 = needle, 4 = brick, 5 = can
 
 var can_hide = false
+var can_enter_blue = false
+var can_enter_red = false
 var is_hidden = false
 var velocity = Vector2()
 var nomaterial = null
@@ -112,6 +114,15 @@ func get_input():
 		is_hidden = true
 		emit_signal("playerhidden",is_hidden)
 		$AnimatedSprite.play("hiding")
+	if Input.is_action_pressed("ui_up") && can_enter_blue == true:
+		if Scene_handler.current_level == 2:
+			Scene_handler.current_level = 3
+		elif Scene_handler.current_level == 3:
+			Scene_handler.current_level = 2
+		Scene_handler.next_level()
+	if Input.is_action_pressed("ui_up") && can_enter_red == true && Scene_handler.keys[0] == true:
+		Scene_handler.current_level = 4
+		Scene_handler.next_level()
 	if Input.is_action_pressed("ui_down") && is_hidden == true:
 		$AnimatedSprite.play("unhide")
 		yield($AnimatedSprite, "animation_finished" )
@@ -120,11 +131,18 @@ func get_input():
 		$AnimatedSprite.play("idle")
 
 func _on_MainChar_area_entered(area):
+	if area.is_in_group("bluedoor"):
+		can_enter_blue = true
+	if area.is_in_group("reddoor"):
+		can_enter_red = true
 	if area.is_in_group("doors"):
 		can_hide = true
 	if area.is_in_group("scalpel"):
 		Scene_handler.weapon[0] = false
 		Scene_handler.weapon[1] = true
+		area._pickup()
+	if area.is_in_group("redkey"):
+		Scene_handler.keys[0] = true
 		area._pickup()
 	if area.is_in_group("pipe"):
 		Scene_handler.weapon[0] = false
@@ -154,6 +172,10 @@ func _on_MainChar_area_entered(area):
 func _on_MainChar_area_exited(area):
 	if area.is_in_group("doors"):
 		can_hide = false
+	if area.is_in_group("bluedoor"):
+		can_enter_blue = false
+	if area.is_in_group("reddoor"):
+		can_enter_red = false
 
 func _check_shaders():
 	if ray.is_colliding() && (Scene_handler.weapon[1] || Scene_handler.weapon[2] || Scene_handler.weapon[3]):

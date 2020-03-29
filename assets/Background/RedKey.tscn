@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Background/RedKey.gd" type="Script" id=1]
+[ext_resource path="res://assets/Weapons/Items.tres" type="Material" id=2]
+[ext_resource path="res://assets/Background/RedKey.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 13.7612, 5.33948 )
+
+[node name="Scalpel" type="Area2D" groups=[
+"redkey",
+]]
+scale = Vector2( 0.3, 0.3 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.56313, 2.13593 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = ExtResource( 2 )
+position = Vector2( 0.439803, 3.07863 )
+texture = ExtResource( 3 )

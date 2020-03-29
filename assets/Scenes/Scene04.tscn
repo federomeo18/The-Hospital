@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/Background/Background4.png" type="Texture" id=1]
+[ext_resource path="res://assets/Background/Sprites/Door closed.png" type="Texture" id=2]
+[ext_resource path="res://assets/Background/Door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/UI/UI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Enemy01/Enemy1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/MC/MainChar.tscn" type="PackedScene" id=6]
+
+[node name="Scene01" type="Node"]
+
+[node name="Map2" type="Sprite" parent="."]
+position = Vector2( 264.327, 500.736 )
+scale = Vector2( 0.329591, 1 )
+texture = ExtResource( 1 )
+
+[node name="Door closed" type="Sprite" parent="."]
+position = Vector2( 62.251, 500.77 )
+texture = ExtResource( 2 )
+
+[node name="Door closed2" type="Sprite" parent="."]
+position = Vector2( 119.964, 500.77 )
+texture = ExtResource( 2 )
+
+[node name="Door closed3" type="Sprite" parent="."]
+position = Vector2( 391.824, 500.77 )
+texture = ExtResource( 2 )
+
+[node name="Door closed4" type="Sprite" parent="."]
+position = Vector2( 474.984, 500.77 )
+texture = ExtResource( 2 )
+
+[node name="Door" parent="." instance=ExtResource( 3 )]
+position = Vector2( 228.693, 500.77 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 4 )]
+
+[node name="Enemy1" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
+position = Vector2( 215.287, 505.235 )
+scale = Vector2( 0.648318, 1.05644 )
+enemym = 2
+
+[node name="AnimatedSprite" parent="Enemy1" index="0"]
+frame = 14
+
+[node name="RayCastBack" parent="Enemy1" index="4"]
+cast_to = Vector2( -100, 0 )
+
+[node name="1stPos" parent="Enemy1" index="5"]
+position = Vector2( 311.092, 5.81873 )
+
+[node name="MainChar" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 38.3137, 522.038 )
+[connection signal="enemyattack" from="Enemy1" to="MainChar" method="_on_Enemy1_enemyattack"]
+[connection signal="noiselevelchanged" from="MainChar" to="CanvasLayer" method="_on_MainChar_noiselevelchanged"]
+[connection signal="noiselevelchanged" from="MainChar" to="Enemy1" method="_on_MainChar_noiselevelchanged"]
+[connection signal="playerattack" from="MainChar" to="Enemy1" method="_on_MainChar_playerattack"]
+[connection signal="playerhidden" from="MainChar" to="Enemy1" method="_on_MainChar_playerhidden"]
+
+[editable path="Enemy1"]
+
+[editable path="MainChar"]

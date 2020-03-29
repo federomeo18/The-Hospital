@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Car2.png-1270868da667e3870b6044a3937eb801.stex"
+path="res://.import/RedKey.png-eda41077572565ba4b72ae126fad8adf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Background/Car2.png"
-dest_files=[ "res://.import/Car2.png-1270868da667e3870b6044a3937eb801.stex" ]
+source_file="res://assets/Background/RedKey.png"
+dest_files=[ "res://.import/RedKey.png-eda41077572565ba4b72ae126fad8adf.stex" ]
 
 [params]
 

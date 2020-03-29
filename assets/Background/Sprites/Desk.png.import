@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Map2.png-77b0030148643f3d964beb515d98c425.stex"
+path="res://.import/Desk.png-75fd3fabcafa6debe4444e9962bb6c28.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Background/Map2.png"
-dest_files=[ "res://.import/Map2.png-77b0030148643f3d964beb515d98c425.stex" ]
+source_file="res://assets/Background/Sprites/Desk.png"
+dest_files=[ "res://.import/Desk.png-75fd3fabcafa6debe4444e9962bb6c28.stex" ]
 
 [params]
 
