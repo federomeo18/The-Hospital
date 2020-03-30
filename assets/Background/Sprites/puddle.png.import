@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Backgound2.png-a79690953d2175efdbe9103b53fadb68.stex"
+path="res://.import/puddle.png-298529a76e4d6b41bd4f20e5f66cc53d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Background/Backgound2.png"
-dest_files=[ "res://.import/Backgound2.png-a79690953d2175efdbe9103b53fadb68.stex" ]
+source_file="res://assets/Background/Sprites/puddle.png"
+dest_files=[ "res://.import/puddle.png-298529a76e4d6b41bd4f20e5f66cc53d.stex" ]
 
 [params]
 

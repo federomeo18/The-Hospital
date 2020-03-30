@@ -1,15 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/Background/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Other/Cutscene_Trigger.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/Weapons/Scalpel/Scalpel.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/MC/MainChar.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/Enemy01/Enemy1.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/Enemy02/Enemy2.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/Weapons/Pipe/Pipe.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/Weapons/Syringe/Syringe.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/UI/UI.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/Background/LateralDoor.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/MC/MainChar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/UI/UI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Background/LateralDoor.tscn" type="PackedScene" id=5]
 
 [node name="Scene00" type="Node"]
 
@@ -19,43 +14,24 @@ scale = Vector2( 0.1, 0.1 )
 
 [node name="Cutscene_Trigger" parent="." instance=ExtResource( 2 )]
 
-[node name="Scalpel" parent="." instance=ExtResource( 3 )]
-position = Vector2( -29.2116, 525.908 )
-
-[node name="MainChar" parent="." instance=ExtResource( 4 )]
+[node name="MainChar" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
 position = Vector2( -416.731, 613.091 )
-
-[node name="Enemy1" parent="." instance=ExtResource( 5 )]
-position = Vector2( 101.484, 449.212 )
-
-[node name="Enemy2" parent="." instance=ExtResource( 6 )]
-position = Vector2( -91.0289, 439.473 )
-
-[node name="Pipe" parent="." instance=ExtResource( 7 )]
-position = Vector2( 10.4733, 524.037 )
-
-[node name="Syringe" parent="." instance=ExtResource( 8 )]
-position = Vector2( -69.7221, 525.993 )
-scale = Vector2( 0.24, 0.15 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( 48.4414, 572.807 )
 color = Color( 0.101961, 0.101961, 0.101961, 1 )
 
-[node name="CanvasLayer" parent="." instance=ExtResource( 9 )]
+[node name="CanvasLayer" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
 
 [node name="LateralDoor" parent="." groups=[
 "lateral",
-] instance=ExtResource( 10 )]
+] instance=ExtResource( 5 )]
 position = Vector2( 737.207, 610.691 )
 scale = Vector2( 0.18, 0.18 )
 [connection signal="area_entered" from="Cutscene_Trigger" to="MainChar" method="_on_Cutscene_Trigger_area_entered"]
 [connection signal="noiselevelchanged" from="MainChar" to="CanvasLayer" method="_on_MainChar_noiselevelchanged"]
-[connection signal="noiselevelchanged" from="MainChar" to="Enemy1" method="_on_MainChar_noiselevelchanged"]
-[connection signal="playerattack" from="MainChar" to="Enemy1" method="_on_MainChar_playerattack"]
-[connection signal="playerhidden" from="MainChar" to="Enemy1" method="_on_MainChar_playerhidden"]
-[connection signal="enemyattack" from="Enemy1" to="MainChar" method="_on_Enemy1_enemyattack"]
 
 [editable path="MainChar"]
 

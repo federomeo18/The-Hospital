@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/YellowKey.png-244905d2852c365aa1d81fd6f45804e6.stex"
+path="res://.import/Background3.png-58944c912d9be47c5699417246812b96.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Background/YellowKey.png"
-dest_files=[ "res://.import/YellowKey.png-244905d2852c365aa1d81fd6f45804e6.stex" ]
+source_file="res://assets/Background/Sprites/Background3.png"
+dest_files=[ "res://.import/Background3.png-58944c912d9be47c5699417246812b96.stex" ]
 
 [params]
 

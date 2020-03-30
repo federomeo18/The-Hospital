@@ -12,6 +12,7 @@ var can_move = true
 var can_hide = false
 var can_enter_blue = false
 var can_enter_red = false
+var in_puddle = false
 var is_hidden = false
 var velocity = Vector2()
 var nomaterial = null
@@ -67,17 +68,29 @@ func get_input():
 	velocity = Vector2()
 	if Input.is_action_pressed("Debug"):
 		Scene_handler.next_level()
-	if Input.is_action_pressed("ui_lshift") && (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")) && is_hidden == false:
+	if Input.is_action_pressed("ui_lshift") && (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")) && is_hidden == false && in_puddle == false:
 		speed = 80
 		noiselevel = 80
 		emit_signal("noiselevelchanged",noiselevel)
-	elif Input.is_action_pressed("Crouch") && (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")) && is_hidden == false:
+	elif Input.is_action_pressed("ui_lshift") && (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")) && is_hidden == false && in_puddle == true:
+		speed = 80
+		noiselevel = 100
+		emit_signal("noiselevelchanged",noiselevel)
+	elif Input.is_action_pressed("Crouch") && (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")) && is_hidden == false && in_puddle == false:
 		speed = 40
 		noiselevel = 20
 		emit_signal("noiselevelchanged",noiselevel)
-	elif (!Input.is_action_pressed("ui_lshift") || !Input.is_action_pressed("Crouch")) && (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")) && is_hidden == false:
+	elif Input.is_action_pressed("Crouch") && (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")) && is_hidden == false && in_puddle == true:
+		speed = 40
+		noiselevel = 50
+		emit_signal("noiselevelchanged",noiselevel)
+	elif (!Input.is_action_pressed("ui_lshift") || !Input.is_action_pressed("Crouch")) && (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")) && is_hidden == false && in_puddle == false:
 		speed = 60
 		noiselevel = 50
+		emit_signal("noiselevelchanged",noiselevel)
+	elif (!Input.is_action_pressed("ui_lshift") || !Input.is_action_pressed("Crouch")) && (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right")) && is_hidden == false && in_puddle == true:
+		speed = 60
+		noiselevel = 80
 		emit_signal("noiselevelchanged",noiselevel)
 	else:
 		speed = 40
@@ -137,6 +150,9 @@ func _on_MainChar_area_entered(area):
 		can_enter_red = true
 	if area.is_in_group("doors"):
 		can_hide = true
+	if area.is_in_group("endhallway"):
+		Scene_handler.current_level = 5
+		Scene_handler.next_level()
 	if area.is_in_group("scalpel"):
 		Scene_handler.weapon[0] = false
 		Scene_handler.weapon[1] = true
@@ -168,6 +184,8 @@ func _on_MainChar_area_entered(area):
 	if area.is_in_group("hallway"):
 		Scene_handler.current_level = 2
 		Scene_handler.next_level()
+	if area.is_in_group("puddle"):
+		in_puddle = true
 
 func _on_MainChar_area_exited(area):
 	if area.is_in_group("doors"):
@@ -176,6 +194,8 @@ func _on_MainChar_area_exited(area):
 		can_enter_blue = false
 	if area.is_in_group("reddoor"):
 		can_enter_red = false
+	if area.is_in_group("puddle"):
+		in_puddle = false
 
 func _check_shaders():
 	if ray.is_colliding() && (Scene_handler.weapon[1] || Scene_handler.weapon[2] || Scene_handler.weapon[3]):
