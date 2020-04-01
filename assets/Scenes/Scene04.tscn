@@ -87,10 +87,13 @@ position = Vector2( 173.777, 505.235 )
 scale = Vector2( 0.648318, 1.05644 )
 enemym = 2
 
-[node name="RayCastBack" parent="Enemy1" index="4"]
+[node name="AnimatedSprite" parent="Enemy1" index="0"]
+frame = 8
+
+[node name="RayCastBack" parent="Enemy1" index="5"]
 cast_to = Vector2( -100, 0 )
 
-[node name="1stPos" parent="Enemy1" index="5"]
+[node name="1stPos" parent="Enemy1" index="7"]
 position = Vector2( 311.092, 5.81873 )
 
 [node name="Puddle" parent="." instance=ExtResource( 5 )]
@@ -98,7 +101,7 @@ position = Vector2( 174.423, 520.368 )
 scale = Vector2( 2, 1.99384 )
 
 [node name="Puddle2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 329.439, 520.368 )
+position = Vector2( 291.949, 520.368 )
 scale = Vector2( 2, 1.99384 )
 
 [node name="RedDoor" parent="." instance=ExtResource( 6 )]
@@ -113,20 +116,21 @@ position = Vector2( 176.789, 487.081 )
 scale = Vector2( 1.22874, 4.1699 )
 frames = SubResource( 1 )
 animation = "Drip"
-frame = 29
+frame = 21
 playing = true
 
 [node name="Drip2" type="AnimatedSprite" parent="."]
-position = Vector2( 329.439, 487.081 )
+position = Vector2( 293.109, 487.081 )
 scale = Vector2( 1.22874, 4.1699 )
 frames = SubResource( 1 )
 animation = "Drip"
-frame = 28
+frame = 20
 playing = true
 
 [node name="EndHallway" type="Area2D" parent="." groups=[
 "endhallway",
 ]]
+editor/display_folded = true
 position = Vector2( 478.672, 503.049 )
 
 [node name="Sprite" type="Sprite" parent="EndHallway"]

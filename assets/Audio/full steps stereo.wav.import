@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/full steps stereo.wav-e6ce9ed90c23451ecd43e238dcf5fdfd.sample"
+
+[deps]
+
+source_file="res://assets/Audio/full steps stereo.wav"
+dest_files=[ "res://.import/full steps stereo.wav-e6ce9ed90c23451ecd43e238dcf5fdfd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cast iron clangs - Marker #6.wav-23bf7329e4c1540951de4a4a870caacf.sample"
+
+[deps]
+
+source_file="res://assets/Audio/cast iron clangs - Marker #6.wav"
+dest_files=[ "res://.import/cast iron clangs - Marker #6.wav-23bf7329e4c1540951de4a4a870caacf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/UI/UI.gd" type="Script" id=1]
 [ext_resource path="res://assets/UI/SoundBar.tscn" type="PackedScene" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://assets/UI/Text.gd" type="Script" id=4]
 [ext_resource path="res://assets/UI/displace.png" type="Texture" id=5]
 [ext_resource path="res://assets/UI/Transition_Effect.gd" type="Script" id=6]
+[ext_resource path="res://assets/UI/Scalpel_UI.png" type="Texture" id=7]
+[ext_resource path="res://assets/UI/Can_UI.png" type="Texture" id=8]
+[ext_resource path="res://assets/UI/RedKey_UI.png" type="Texture" id=9]
+[ext_resource path="res://assets/UI/Container.png" type="Texture" id=10]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -61,3 +65,25 @@ color = Color( 0, 0, 0, 1 )
 script = ExtResource( 6 )
 
 [node name="tween" type="Tween" parent="."]
+
+[node name="Scalpel_UI" type="Sprite" parent="."]
+position = Vector2( 925.455, 48.709 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+
+[node name="Can_UI" type="Sprite" parent="."]
+position = Vector2( 925.455, 48.7093 )
+texture = ExtResource( 8 )
+
+[node name="RedKey_UI" type="Sprite" parent="."]
+position = Vector2( 825.542, 48.7956 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+
+[node name="Container" type="Sprite" parent="."]
+position = Vector2( 925.55, 46.7254 )
+texture = ExtResource( 10 )
+
+[node name="Container2" type="Sprite" parent="."]
+position = Vector2( 825.375, 47.3888 )
+texture = ExtResource( 10 )

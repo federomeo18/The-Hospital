@@ -1,0 +1,198 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/Scenes/Intro.gd" type="Script" id=1]
+[ext_resource path="res://assets/UI/Intro.png" type="Texture" id=2]
+[ext_resource path="res://assets/Weapons/Items.shader" type="Shader" id=3]
+[ext_resource path="res://assets/UI/New Game.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/Tutorial.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/Title.png" type="Texture" id=6]
+[ext_resource path="res://assets/UI/Bar.png" type="Texture" id=7]
+[ext_resource path="res://assets/UI/Monster.png" type="Texture" id=8]
+[ext_resource path="res://assets/UI/Arrows.png" type="Texture" id=9]
+[ext_resource path="res://assets/UI/Shift_Control.png" type="Texture" id=10]
+[ext_resource path="res://assets/UI/Enter.png" type="Texture" id=11]
+[ext_resource path="res://assets/Weapons/Items.tres" type="Material" id=12]
+[ext_resource path="res://assets/UI/Back.png" type="Texture" id=13]
+[ext_resource path="res://assets/UI/Next.png" type="Texture" id=14]
+[ext_resource path="res://assets/UI/Space.png" type="Texture" id=15]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+shader_param/outLineSize = 0.02
+shader_param/outLineColor = Plane( 1, 1, 1, 1 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 3 )
+shader_param/outLineSize = 0.02
+shader_param/outLineColor = Plane( 1, 1, 1, 1 )
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Intro" type="Sprite" parent="."]
+position = Vector2( 510, 385 )
+texture = ExtResource( 2 )
+
+[node name="New_Game" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 512.085, 530.625 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Tutorial" type="Sprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( 500.422, 597.108 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="Title" type="Sprite" parent="."]
+position = Vector2( 511.89, 126.189 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="Bar" type="Sprite" parent="."]
+visible = false
+position = Vector2( 195.946, 333.493 )
+texture = ExtResource( 7 )
+
+[node name="Text1" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 245.54
+margin_top = 110.108
+margin_right = 838.326
+margin_bottom = 179.786
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "You wake up in a hospital unexpectedly, with no injuries. 
+As you move on, you need to solve every room puzzle to escape without being caught."
+
+[node name="Text2" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 28.3521
+margin_top = 428.829
+margin_right = 373.403
+margin_bottom = 541.031
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "This is your sound bar, monsters don't have a good vision, but they can find you by the noise you emit. The slower you walk, the lowest your sound will be. If you run, step on glass or water, the noise will be higher, and they find you easily. You can use this to your advantage by throwing cans or bricks. The monsters will be attracted to it."
+
+[node name="Text3" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 603.396
+margin_top = 423.942
+margin_right = 948.447
+margin_bottom = 536.144
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "The transparent triangles are the area of vision and hearing of the monsters. If you are in front, that's how far they will see you. If you are behind him, he will only notice you if you are making a loud noise. Use this to attack him if you have any weapons."
+
+[node name="Text4" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 150.871
+margin_top = 220.725
+margin_right = 222.0
+margin_bottom = 238.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Move Left"
+
+[node name="Text6" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 633.425
+margin_top = 222.121
+margin_right = 704.554
+margin_bottom = 239.397
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Move Right"
+
+[node name="Text5" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 389.703
+margin_top = 219.328
+margin_right = 471.0
+margin_bottom = 236.603
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Enter Doors"
+
+[node name="Text7" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 865.274
+margin_top = 219.328
+margin_right = 946.571
+margin_bottom = 236.603
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Exit Doors"
+
+[node name="Text8" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 120.144
+margin_top = 433.719
+margin_right = 201.44
+margin_bottom = 450.994
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Run"
+
+[node name="Text9" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 341.518
+margin_top = 430.925
+margin_right = 422.814
+margin_bottom = 448.201
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Crouch"
+
+[node name="Text10" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 701.862
+margin_top = 485.396
+margin_right = 783.159
+margin_bottom = 502.671
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Use Items"
+
+[node name="Monster" type="Sprite" parent="."]
+visible = false
+position = Vector2( 759.825, 319.465 )
+texture = ExtResource( 8 )
+
+[node name="Arrows" type="Sprite" parent="."]
+visible = false
+position = Vector2( 544.462, 183.073 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 9 )
+
+[node name="Shift_Control" type="Sprite" parent="."]
+visible = false
+position = Vector2( 248.365, 389.782 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 10 )
+
+[node name="Enter" type="Sprite" parent="."]
+visible = false
+position = Vector2( 741.395, 441.459 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 11 )
+
+[node name="Back" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 12 )
+position = Vector2( 125.579, 650.352 )
+texture = ExtResource( 13 )
+
+[node name="Next" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 12 )
+position = Vector2( 847.357, 652.592 )
+texture = ExtResource( 14 )
+
+[node name="Space" type="Sprite" parent="."]
+visible = false
+position = Vector2( 742.093, 348.58 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 15 )

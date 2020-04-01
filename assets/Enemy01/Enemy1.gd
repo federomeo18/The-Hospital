@@ -28,7 +28,7 @@ func _process(_delta):
 		queue_free()
 	if !Scene_handler.cut_scene_n == 2 && !Scene_handler.cut_scene_n == 3:
 		if status == 0:
-			speed = 30
+			speed = 10
 			patrol()
 			if rayf.is_colliding() && player_hidden == false:
 				var cont = rayf.get_collider()
@@ -52,6 +52,9 @@ func _process(_delta):
 		elif status == 2:
 			velocity.x = 0
 			$AnimatedSprite.play("attack")
+			if not $Attack.is_playing():
+				$Attack.play()
+				status = 6
 		elif status == 3:
 			speed = 90
 			if get_tree().get_current_scene().get_node("Can"):
@@ -68,7 +71,7 @@ func _process(_delta):
 			status = 0
 		elif status == 5:
 			$AnimatedSprite.play("walking")
-			speed = 30
+			speed = 20
 			if rayf.is_colliding() && player_hidden == false:
 				var cont = rayf.get_collider()
 				if cont.get_name() == "MainChar":
@@ -85,6 +88,8 @@ func _process(_delta):
 				var cont = rayf.get_collider()
 				if cont.get_name() == "Can"  || cont.get_name() == "Brick":
 					status = 3
+		elif status == 6:
+			speed = 0
 		_vision()
 	else:
 		_cutscene_handler()
@@ -92,8 +97,12 @@ func _process(_delta):
 func _cutscene_handler():
 	if Scene_handler.cut_scene_n == 2:
 		$AnimatedSprite.play("eat")
+		$Vision.visible = false
+		$Vision2.visible = false
 	if Scene_handler.cut_scene_n == 3:
 		$AnimatedSprite.play("walking")
+		$Vision.visible = true
+		$Vision2.visible = true
 		Scene_handler.cut_scene_n = 4
 
 func _physics_process(delta):

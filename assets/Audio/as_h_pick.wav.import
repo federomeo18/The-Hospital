@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/as_h_pick.wav-159368ba76a3a69a86af24b61c4c23d6.sample"
+
+[deps]
+
+source_file="res://assets/Audio/as_h_pick.wav"
+dest_files=[ "res://.import/as_h_pick.wav-159368ba76a3a69a86af24b61c4c23d6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=false
+compress/mode=0

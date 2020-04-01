@@ -65,13 +65,17 @@ editor/display_folded = true
 position = Vector2( 302.337, 505.235 )
 scale = Vector2( 0.648318, 1.05644 )
 
-[node name="RayCastBack" parent="Enemy1" index="4"]
+[node name="AnimatedSprite" parent="Enemy1" index="0"]
+frame = 17
+
+[node name="RayCastBack" parent="Enemy1" index="5"]
 cast_to = Vector2( -100, 0 )
 
-[node name="1stPos" parent="Enemy1" index="5"]
+[node name="1stPos" parent="Enemy1" index="7"]
 position = Vector2( 311.092, 5.81873 )
 
 [node name="MainChar" parent="." instance=ExtResource( 8 )]
+editor/display_folded = true
 position = Vector2( 38.3137, 522.038 )
 
 [node name="Can_item" parent="." instance=ExtResource( 9 )]
@@ -81,8 +85,8 @@ position = Vector2( 163.197, 539.095 )
 position = Vector2( 196.505, 503.062 )
 scale = Vector2( 1.12, 3 )
 [connection signal="enemyattack" from="Enemy1" to="MainChar" method="_on_Enemy1_enemyattack"]
-[connection signal="noiselevelchanged" from="MainChar" to="CanvasLayer" method="_on_MainChar_noiselevelchanged"]
 [connection signal="noiselevelchanged" from="MainChar" to="Enemy1" method="_on_MainChar_noiselevelchanged"]
+[connection signal="noiselevelchanged" from="MainChar" to="CanvasLayer" method="_on_MainChar_noiselevelchanged"]
 [connection signal="playerattack" from="MainChar" to="Enemy1" method="_on_MainChar_playerattack"]
 [connection signal="playerhidden" from="MainChar" to="Enemy1" method="_on_MainChar_playerhidden"]
 [connection signal="area_entered" from="Cutscene_Trigger" to="MainChar" method="_on_Cutscene_Trigger_area_entered"]
