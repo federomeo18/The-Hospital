@@ -26,7 +26,9 @@ func _process(delta):
 		$New_Game.material = nomaterial
 	if item == 0 && Input.is_action_just_pressed("Action"):
 		Scene_handler.next_level()
+		$Click.play()
 	elif item == 1 && Input.is_action_just_pressed("Action"):
+		$Click.play()
 		item = 2
 		$New_Game.visible = false
 		$Tutorial.visible = false
@@ -52,6 +54,7 @@ func _process(delta):
 		$Enter.visible = false
 		$Space.visible = false
 	elif item == 2 && Input.is_action_just_pressed("Action"):
+		$Click.play()
 		item = 1
 		$New_Game.visible = true
 		$Tutorial.visible = true
@@ -77,6 +80,7 @@ func _process(delta):
 		$Enter.visible = false
 		$Space.visible = false
 	if item == 3 && Input.is_action_just_pressed("Action"):
+		$Click.play()
 		item = 1
 		$New_Game.visible = false
 		$Tutorial.visible = false
@@ -102,10 +106,12 @@ func _process(delta):
 		$Enter.visible = true
 		$Space.visible = true
 	if (item == 2 && Input.is_action_just_pressed("Left")) || (item == 3 && Input.is_action_just_pressed("Left")):
+		$Click.play()
 		item = 2
 		$Back.material = textblink
 		$Next.material = nomaterial
 	if (item == 2 && Input.is_action_just_pressed("Right")) || (item == 3 && Input.is_action_just_pressed("Right")):
+		$Click.play()
 		item = 3
 		$Back.material = nomaterial
 		$Next.material = textblink

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/Scenes/Intro.gd" type="Script" id=1]
 [ext_resource path="res://assets/UI/Intro.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/UI/Back.png" type="Texture" id=13]
 [ext_resource path="res://assets/UI/Next.png" type="Texture" id=14]
 [ext_resource path="res://assets/UI/Space.png" type="Texture" id=15]
+[ext_resource path="res://assets/Audio/misc_menu.wav" type="AudioStream" id=16]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
@@ -196,3 +197,6 @@ visible = false
 position = Vector2( 742.093, 348.58 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 15 )
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )

@@ -30,8 +30,7 @@ func start(pos):
 func _ready():
 	$AnimatedSprite.material = nomaterial
 
-func _physics_process(delta):
-	move_and_collide(Vector2(0,0))#_process(delta):
+func _process(delta):
 	if Scene_handler.cut_scene == false:
 		get_input()
 		_check_shaders()
@@ -167,10 +166,70 @@ func get_input():
 		$AnimatedSprite.play("idle")
 
 func _on_MainChar_area_entered(area):
-	pass
+	if area.is_in_group("bluedoor"):
+		can_enter_blue = true
+	if area.is_in_group("reddoor"):
+		can_enter_red = true
+	if area.is_in_group("doors"):
+		can_hide = true
+	if area.is_in_group("endhallway"):
+		Scene_handler.current_level = 5
+		Scene_handler.next_level()
+	if area.is_in_group("scalpel"):
+		Scene_handler.weapon[0] = false
+		Scene_handler.weapon[1] = true
+		area._pickup()
+		$Pickup.play()
+	if area.is_in_group("redkey"):
+		Scene_handler.keys[0] = true
+		area._pickup()
+		$Pickup.play()
+	if area.is_in_group("pipe"):
+		Scene_handler.weapon[0] = false
+		Scene_handler.weapon[2] = true
+		area._pickup()
+		$Pickup.play()
+	if area.is_in_group("syringe"):
+		Scene_handler.weapon[0] = false
+		Scene_handler.weapon[3] = true
+		area._pickup()
+		$Pickup.play()
+	if area.is_in_group("brick"):
+		Scene_handler.weapon[0] = false
+		Scene_handler.weapon[4] = true
+		area._pickup()
+		$Pickup.play()
+	if area.is_in_group("can"):
+		Scene_handler.weapon[0] = false
+		Scene_handler.weapon[5] = true
+		area._pickup()
+		$Pickup.play()
+	if area.is_in_group("cutscene"):
+		area._end()
+	if area.is_in_group("lateral"):
+		Scene_handler.current_level = 1
+		Scene_handler.next_level()
+	if area.is_in_group("hallway"):
+		Scene_handler.current_level = 2
+		Scene_handler.next_level()
+	if area.is_in_group("puddle"):
+		in_puddle = true
+	if area.is_in_group("leftwall"):
+		#velocity.x += 1
+		speed
+		print("Wall")
 
 func _on_MainChar_area_exited(area):
-	pass
+	if area.is_in_group("doors"):
+		can_hide = false
+	if area.is_in_group("bluedoor"):
+		can_enter_blue = false
+	if area.is_in_group("reddoor"):
+		can_enter_red = false
+	if area.is_in_group("puddle"):
+		in_puddle = false
+		if $Water_Step.is_playing():
+			$Water_Step.stop()
 
 func _check_shaders():
 	if ray.is_colliding() && (Scene_handler.weapon[1] || Scene_handler.weapon[2] || Scene_handler.weapon[3]):
@@ -231,66 +290,3 @@ func _cutscene_handler():
 		$AnimatedSprite.play("idle")
 	if Input.is_action_pressed("Action"):
 		Scene_handler.cut_scene = false
-
-func _on_Area2D_area_entered(area):
-	if area.is_in_group("bluedoor"):
-		can_enter_blue = true
-	if area.is_in_group("reddoor"):
-		can_enter_red = true
-	if area.is_in_group("doors"):
-		can_hide = true
-	if area.is_in_group("endhallway"):
-		Scene_handler.current_level = 5
-		Scene_handler.next_level()
-	if area.is_in_group("scalpel"):
-		Scene_handler.weapon[0] = false
-		Scene_handler.weapon[1] = true
-		area._pickup()
-		$Pickup.play()
-	if area.is_in_group("redkey"):
-		Scene_handler.keys[0] = true
-		area._pickup()
-		$Pickup.play()
-	if area.is_in_group("pipe"):
-		Scene_handler.weapon[0] = false
-		Scene_handler.weapon[2] = true
-		area._pickup()
-		$Pickup.play()
-	if area.is_in_group("syringe"):
-		Scene_handler.weapon[0] = false
-		Scene_handler.weapon[3] = true
-		area._pickup()
-		$Pickup.play()
-	if area.is_in_group("brick"):
-		Scene_handler.weapon[0] = false
-		Scene_handler.weapon[4] = true
-		area._pickup()
-		$Pickup.play()
-	if area.is_in_group("can"):
-		Scene_handler.weapon[0] = false
-		Scene_handler.weapon[5] = true
-		area._pickup()
-		$Pickup.play()
-	if area.is_in_group("cutscene"):
-		area._end()
-	if area.is_in_group("lateral"):
-		Scene_handler.current_level = 1
-		Scene_handler.next_level()
-	if area.is_in_group("hallway"):
-		Scene_handler.current_level = 2
-		Scene_handler.next_level()
-	if area.is_in_group("puddle"):
-		in_puddle = true
-
-
-func _on_Area2D_area_exited(area):
-	if area.is_in_group("doors"):
-		can_hide = false
-	if area.is_in_group("bluedoor"):
-		can_enter_blue = false
-	if area.is_in_group("reddoor"):
-		can_enter_red = false
-	if area.is_in_group("puddle"):
-		in_puddle = false
-		if $Water_Step.is_playing():
-			$Water_Step.stop()

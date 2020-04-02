@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/Scenes/Intro.gd" type="Script" id=1]
 [ext_resource path="res://assets/UI/Intro.png" type="Texture" id=2]
 [ext_resource path="res://assets/UI/End.png" type="Texture" id=3]
+[ext_resource path="res://assets/Other/Credits.png" type="Texture" id=4]
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -12,5 +13,9 @@ position = Vector2( 510, 385 )
 texture = ExtResource( 2 )
 
 [node name="End" type="Sprite" parent="."]
-position = Vector2( 519.505, 372.553 )
+position = Vector2( 529.005, 158.803 )
 texture = ExtResource( 3 )
+
+[node name="Credits" type="Sprite" parent="End"]
+position = Vector2( 6.64624, 289.748 )
+texture = ExtResource( 4 )
