@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/Background/Sprites/Background3.png" type="Texture" id=1]
 [ext_resource path="res://assets/UI/UI.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/Background/Sprites/Desk.png" type="Texture" id=6]
 [ext_resource path="res://assets/Weapons/Scalpel/Scalpel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/MC/MainChar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/Background/Left Wall.tscn" type="PackedScene" id=9]
 
 [node name="Node" type="Node"]
 
@@ -36,6 +37,14 @@ scale = Vector2( 0.391305, 0.362499 )
 
 [node name="MainChar" parent="." instance=ExtResource( 8 )]
 position = Vector2( 60.5942, 520.786 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 9 )]
+position = Vector2( -25.3866, 504.559 )
+scale = Vector2( -2.49628, 4.96981 )
+
+[node name="StaticBody2D2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 232.526, 501.478 )
+scale = Vector2( -2.49628, 4.96981 )
 [connection signal="noiselevelchanged" from="MainChar" to="CanvasLayer" method="_on_MainChar_noiselevelchanged"]
 
 [editable path="BlueDoor"]

@@ -32,7 +32,7 @@ editor/display_folded = true
 position = Vector2( 737.207, 610.691 )
 scale = Vector2( 0.18, 0.18 )
 
-[node name="Left Wall" parent="." instance=ExtResource( 6 )]
+[node name="Wall" parent="." instance=ExtResource( 6 )]
 position = Vector2( -549.55, 606.098 )
 scale = Vector2( 2.81757, 3.88088 )
 [connection signal="area_entered" from="Cutscene_Trigger" to="MainChar" method="_on_Cutscene_Trigger_area_entered"]

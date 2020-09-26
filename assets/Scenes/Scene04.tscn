@@ -1,58 +1,59 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://assets/Background/Sprites/Background5.png" type="Texture" id=1]
 [ext_resource path="res://assets/Background/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/UI/UI.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/Enemy01/Enemy1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/Background/Puddle.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/Background/RedDoor.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/MC/MainChar.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/Background/Sprites/Drip_00.png" type="Texture" id=8]
-[ext_resource path="res://assets/Background/Sprites/Drip_01.png" type="Texture" id=9]
-[ext_resource path="res://assets/Background/Sprites/Drip_02.png" type="Texture" id=10]
-[ext_resource path="res://assets/Background/Sprites/Drip_03.png" type="Texture" id=11]
-[ext_resource path="res://assets/Background/Sprites/Drip_04.png" type="Texture" id=12]
-[ext_resource path="res://assets/Background/Sprites/Drip_05.png" type="Texture" id=13]
-[ext_resource path="res://assets/Background/Sprites/Drip_06.png" type="Texture" id=14]
-[ext_resource path="res://assets/Background/Sprites/Drip_07.png" type="Texture" id=15]
-[ext_resource path="res://assets/Background/Sprites/Drip_08.png" type="Texture" id=16]
-[ext_resource path="res://assets/Background/Sprites/Drip_09.png" type="Texture" id=17]
-[ext_resource path="res://assets/Background/Sprites/Drip_10.png" type="Texture" id=18]
-[ext_resource path="res://assets/Background/Sprites/Drip_11.png" type="Texture" id=19]
-[ext_resource path="res://assets/Background/Sprites/Drip_12.png" type="Texture" id=20]
-[ext_resource path="res://assets/Background/Sprites/Drip_13.png" type="Texture" id=21]
-[ext_resource path="res://assets/Background/Sprites/Drip_14.png" type="Texture" id=22]
-[ext_resource path="res://assets/Background/Sprites/Drip_15.png" type="Texture" id=23]
-[ext_resource path="res://assets/Background/Sprites/Drip_16.png" type="Texture" id=24]
-[ext_resource path="res://assets/Background/Sprites/Drip_17.png" type="Texture" id=25]
-[ext_resource path="res://assets/Background/Sprites/Drip_18.png" type="Texture" id=26]
-[ext_resource path="res://assets/Background/Sprites/Drip_19.png" type="Texture" id=27]
-[ext_resource path="res://assets/Background/Sprites/Drip_20.png" type="Texture" id=28]
-[ext_resource path="res://assets/Background/Sprites/Drip_21.png" type="Texture" id=29]
-[ext_resource path="res://assets/Background/Sprites/Drip_22.png" type="Texture" id=30]
-[ext_resource path="res://assets/Background/Sprites/Drip_23.png" type="Texture" id=31]
-[ext_resource path="res://assets/Background/Sprites/Drip_24.png" type="Texture" id=32]
-[ext_resource path="res://assets/Background/Sprites/Drip_25.png" type="Texture" id=33]
-[ext_resource path="res://assets/Background/Sprites/Drip_26.png" type="Texture" id=34]
-[ext_resource path="res://assets/Background/Sprites/Drip_27.png" type="Texture" id=35]
-[ext_resource path="res://assets/Background/Sprites/Drip_28.png" type="Texture" id=36]
-[ext_resource path="res://assets/Background/Sprites/Drip_29.png" type="Texture" id=37]
-[ext_resource path="res://assets/Background/Sprites/Drip_30.png" type="Texture" id=38]
-[ext_resource path="res://assets/Background/Sprites/Drip_31.png" type="Texture" id=39]
-[ext_resource path="res://assets/Background/Sprites/Drip_32.png" type="Texture" id=40]
-[ext_resource path="res://assets/Background/Sprites/Drip_33.png" type="Texture" id=41]
-[ext_resource path="res://assets/Background/Sprites/Hallway.png" type="Texture" id=42]
+[ext_resource path="res://assets/Background/Sprites/Hallway.png" type="Texture" id=4]
+[ext_resource path="res://assets/Enemy01/Enemy1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/Background/Puddle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/Background/RedDoor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/MC/MainChar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/Background/Sprites/Drip_00.png" type="Texture" id=9]
+[ext_resource path="res://assets/Background/Sprites/Drip_01.png" type="Texture" id=10]
+[ext_resource path="res://assets/Background/Sprites/Drip_02.png" type="Texture" id=11]
+[ext_resource path="res://assets/Background/Sprites/Drip_03.png" type="Texture" id=12]
+[ext_resource path="res://assets/Background/Sprites/Drip_04.png" type="Texture" id=13]
+[ext_resource path="res://assets/Background/Sprites/Drip_05.png" type="Texture" id=14]
+[ext_resource path="res://assets/Background/Sprites/Drip_06.png" type="Texture" id=15]
+[ext_resource path="res://assets/Background/Sprites/Drip_07.png" type="Texture" id=16]
+[ext_resource path="res://assets/Background/Sprites/Drip_08.png" type="Texture" id=17]
+[ext_resource path="res://assets/Background/Sprites/Drip_09.png" type="Texture" id=18]
+[ext_resource path="res://assets/Background/Sprites/Drip_10.png" type="Texture" id=19]
+[ext_resource path="res://assets/Background/Sprites/Drip_11.png" type="Texture" id=20]
+[ext_resource path="res://assets/Background/Sprites/Drip_12.png" type="Texture" id=21]
+[ext_resource path="res://assets/Background/Sprites/Drip_13.png" type="Texture" id=22]
+[ext_resource path="res://assets/Background/Sprites/Drip_14.png" type="Texture" id=23]
+[ext_resource path="res://assets/Background/Sprites/Drip_15.png" type="Texture" id=24]
+[ext_resource path="res://assets/Background/Sprites/Drip_16.png" type="Texture" id=25]
+[ext_resource path="res://assets/Background/Sprites/Drip_17.png" type="Texture" id=26]
+[ext_resource path="res://assets/Background/Sprites/Drip_18.png" type="Texture" id=27]
+[ext_resource path="res://assets/Background/Sprites/Drip_19.png" type="Texture" id=28]
+[ext_resource path="res://assets/Background/Sprites/Drip_20.png" type="Texture" id=29]
+[ext_resource path="res://assets/Background/Sprites/Drip_21.png" type="Texture" id=30]
+[ext_resource path="res://assets/Background/Sprites/Drip_22.png" type="Texture" id=31]
+[ext_resource path="res://assets/Background/Sprites/Drip_23.png" type="Texture" id=32]
+[ext_resource path="res://assets/Background/Sprites/Drip_24.png" type="Texture" id=33]
+[ext_resource path="res://assets/Background/Sprites/Drip_25.png" type="Texture" id=34]
+[ext_resource path="res://assets/Background/Sprites/Drip_26.png" type="Texture" id=35]
+[ext_resource path="res://assets/Background/Sprites/Drip_27.png" type="Texture" id=36]
+[ext_resource path="res://assets/Background/Sprites/Drip_28.png" type="Texture" id=37]
+[ext_resource path="res://assets/Background/Sprites/Drip_29.png" type="Texture" id=38]
+[ext_resource path="res://assets/Background/Sprites/Drip_30.png" type="Texture" id=39]
+[ext_resource path="res://assets/Background/Sprites/Drip_31.png" type="Texture" id=40]
+[ext_resource path="res://assets/Background/Sprites/Drip_32.png" type="Texture" id=41]
+[ext_resource path="res://assets/Background/Sprites/Drip_33.png" type="Texture" id=42]
+[ext_resource path="res://assets/Background/Left Wall.tscn" type="PackedScene" id=43]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 19.7398, 64.2824 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ) ],
 "loop": true,
 "name": "Drip",
 "speed": 24.0
 } ]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 19.7398, 64.2824 )
 
 [node name="Scene01" type="Node"]
 
@@ -81,33 +82,47 @@ position = Vector2( 400, 500.77 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 3 )]
 
-[node name="Enemy1" parent="." instance=ExtResource( 4 )]
+[node name="EndHallway" type="Area2D" parent="." groups=[
+"endhallway",
+]]
+position = Vector2( 478.672, 503.049 )
+
+[node name="Sprite" type="Sprite" parent="EndHallway"]
+position = Vector2( 20.2911, -28.7238 )
+scale = Vector2( 1.93863, 3.67549 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndHallway"]
+position = Vector2( 15.2842, -33.9942 )
+shape = SubResource( 2 )
+
+[node name="Enemy1" parent="." instance=ExtResource( 5 )]
 editor/display_folded = true
 position = Vector2( 173.777, 505.235 )
 scale = Vector2( 0.648318, 1.05644 )
 enemym = 2
 
 [node name="AnimatedSprite" parent="Enemy1" index="0"]
-frame = 8
+frame = 10
 
 [node name="RayCastBack" parent="Enemy1" index="5"]
 cast_to = Vector2( -100, 0 )
 
 [node name="1stPos" parent="Enemy1" index="7"]
-position = Vector2( 311.092, 5.81873 )
+position = Vector2( 529.691, 8.31849 )
 
-[node name="Puddle" parent="." instance=ExtResource( 5 )]
+[node name="Puddle" parent="." instance=ExtResource( 6 )]
 position = Vector2( 174.423, 520.368 )
 scale = Vector2( 2, 1.99384 )
 
-[node name="Puddle2" parent="." instance=ExtResource( 5 )]
+[node name="Puddle2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 291.949, 520.368 )
 scale = Vector2( 2, 1.99384 )
 
-[node name="RedDoor" parent="." instance=ExtResource( 6 )]
+[node name="RedDoor" parent="." instance=ExtResource( 7 )]
 position = Vector2( 24.255, 500.77 )
 
-[node name="MainChar" parent="." instance=ExtResource( 7 )]
+[node name="MainChar" parent="." instance=ExtResource( 8 )]
 editor/display_folded = true
 position = Vector2( 38.3137, 522.038 )
 
@@ -116,7 +131,7 @@ position = Vector2( 176.789, 487.081 )
 scale = Vector2( 1.22874, 4.1699 )
 frames = SubResource( 1 )
 animation = "Drip"
-frame = 21
+frame = 32
 playing = true
 
 [node name="Drip2" type="AnimatedSprite" parent="."]
@@ -124,23 +139,12 @@ position = Vector2( 293.109, 487.081 )
 scale = Vector2( 1.22874, 4.1699 )
 frames = SubResource( 1 )
 animation = "Drip"
-frame = 20
+frame = 31
 playing = true
 
-[node name="EndHallway" type="Area2D" parent="." groups=[
-"endhallway",
-]]
-editor/display_folded = true
-position = Vector2( 478.672, 503.049 )
-
-[node name="Sprite" type="Sprite" parent="EndHallway"]
-position = Vector2( 20.2911, -28.7238 )
-scale = Vector2( 1.93863, 3.67549 )
-texture = ExtResource( 42 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EndHallway"]
-position = Vector2( 15.2842, -33.9942 )
-shape = SubResource( 2 )
+[node name="StaticBody2D" parent="." instance=ExtResource( 43 )]
+position = Vector2( -18.9475, 507.371 )
+scale = Vector2( 1.94349, 4.07437 )
 [connection signal="enemyattack" from="Enemy1" to="MainChar" method="_on_Enemy1_enemyattack"]
 [connection signal="noiselevelchanged" from="MainChar" to="Enemy1" method="_on_MainChar_noiselevelchanged"]
 [connection signal="noiselevelchanged" from="MainChar" to="CanvasLayer" method="_on_MainChar_noiselevelchanged"]

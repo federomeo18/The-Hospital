@@ -19,3 +19,7 @@ texture = ExtResource( 3 )
 [node name="Credits" type="Sprite" parent="End"]
 position = Vector2( 6.64624, 289.748 )
 texture = ExtResource( 4 )
+
+[node name="New_Game" type="Sprite" parent="."]
+
+[node name="Tutorial" type="Sprite" parent="."]
